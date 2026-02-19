@@ -1,0 +1,194 @@
+# Next.js Project Development Guidelines
+
+This document outlines the comprehensive development standards and best practices for our Next.js project.
+
+## Core Development Philosophy
+
+- Write clean, maintainable, and scalable code
+- Follow SOLID principles
+- Prefer functional and declarative programming patterns
+- Emphasize type safety with TypeScript
+- Practice component-driven development
+- Prioritize performance and accessibility
+
+## Project Structure
+
+src/
+├── app/                 # App Router directory
+├── components/          # Reusable components
+│   ├── ui/             # UI components
+│   ├── layout/         # Layout components
+│   └── features/       # Feature-specific components
+├── lib/                # Utility functions and shared logic
+├── hooks/              # Custom React hooks
+├── types/              # TypeScript type definitions
+├── styles/             # Global styles and CSS modules
+└── utils/              # Helper functions
+
+## Code Style & Conventions
+
+### File & Directory Naming
+- Use kebab-case for file names: `user-profile.tsx`
+- Use kebab-case for directories: `auth-wizard/`
+- Use PascalCase for component files: `UserProfile.tsx`
+- Use camelCase for utility files: `formatDate.ts`
+
+### Component Structure
+- One component per file
+- Place in appropriate directory based on responsibility
+- Co-locate related files (styles, tests, types)
+- Use TypeScript interfaces for props
+- Export as named exports
+
+### TypeScript Usage
+- Enable strict mode
+- Define explicit types for props and state
+- Use interfaces for object types
+- Utilize type guards for null checks
+- Leverage utility types (Partial, Pick, Omit)
+
+### Styling Approach
+- Use Tailwind CSS as primary styling solution
+- Follow mobile-first responsive design
+- Maintain consistent spacing and typography
+- Use CSS variables for theming
+- Implement dark mode support
+
+## Component Development
+
+### Server vs Client Components
+- Default to Server Components
+- Use 'use client' directive only when needed:
+  - Event handlers
+  - Browser APIs
+  - State management
+  - Client-side libraries
+
+### Component Best Practices
+- Keep components focused and single-responsibility
+- Extract reusable logic to custom hooks
+- Implement proper error boundaries
+- Use proper loading states
+- Handle edge cases and errors gracefully
+
+### Performance Optimization
+- Use Image component for images
+- Implement proper code splitting
+- Utilize React.memo() strategically
+- Use proper key props in lists
+- Optimize bundle size
+
+## State Management
+
+### Local State
+- useState for simple state
+- useReducer for complex state
+- useContext for shared state
+- Custom hooks for reusable state logic
+
+### Global State
+- Redux Toolkit for complex global state
+- Zustand for simpler global state
+- Normalize state structure
+- Use selectors for state access
+- Separate concerns by feature
+
+## Data Fetching
+
+### Server Components
+- Use async/await in Server Components
+- Implement proper caching strategies
+- Handle loading and error states
+- Use proper revalidation methods
+
+### Client Components
+- Use SWR or React Query
+- Implement proper error handling
+- Show loading states
+- Handle offline scenarios
+
+## Form Handling
+
+### Validation
+- Use Zod for schema validation
+- React Hook Form for form management
+- Implement proper error messages
+- Show validation feedback
+
+### Accessibility
+- Use proper ARIA attributes
+- Implement keyboard navigation
+- Provide error feedback
+- Maintain focus management
+
+## Testing Strategy
+
+### Unit Testing
+- Jest and React Testing Library
+- Test component behavior
+- Mock external dependencies
+- Follow AAA pattern
+
+### Integration Testing
+- Test user workflows
+- Proper test setup/teardown
+- Use snapshot testing sparingly
+- Test error scenarios
+
+## Security Considerations
+
+- Implement proper authentication
+- Sanitize user input
+- Use proper CORS policies
+- Follow security best practices
+- Implement rate limiting
+
+## Internationalization
+
+- Use next-i18next
+- Support multiple languages
+- Handle RTL layouts
+- Format dates and numbers
+- Support currency formatting
+
+## Documentation
+
+- Use JSDoc for code documentation
+- Document component props
+- Provide usage examples
+- Keep documentation up-to-date
+- Use clear and concise language
+
+## Performance Guidelines
+
+- Optimize images and assets
+- Implement proper caching
+- Use proper bundling strategies
+- Monitor performance metrics
+- Implement lazy loading
+
+## Error Handling
+
+- Implement error boundaries
+- Log errors properly
+- Show user-friendly error messages
+- Handle edge cases
+- Implement fallback UI
+
+## Build & Deployment
+
+- Use proper environment variables
+- Implement CI/CD pipeline
+- Follow deployment best practices
+- Monitor build size
+- Implement proper caching
+
+## Code Review Guidelines
+
+- Review for functionality
+- Check for performance issues
+- Verify accessibility
+- Ensure proper testing
+- Review documentation
+
+Remember to follow these guidelines to maintain consistency and quality across the project. Update this document as new standards and best practices emerge.
