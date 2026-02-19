@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="安全、快速的在线密码生成器，支持自定义长度和字符类型">
-  <title>密码生成器 - 安全随机密码生成工具</title>
+  <meta name="description" content="safe and fast online password generator, support custom length and character type">
+  <title>Password Generator - Safe Random Password Generator</title>
   <style>
     * {
       margin: 0;
@@ -145,7 +145,7 @@
     }
 
     .copy-button.copied {
-      background: #10b981;
+      background: grey;
     }
 
     .strength-indicator {
@@ -412,8 +412,8 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1 class="title">🔐 密码生成器</h1>
-      <p class="subtitle">安全、快速、可自定义的随机密码生成工具</p>
+      <h1 class="title">🔐 Password Generator</h1>
+      <p class="subtitle">safe, fast, customizable random password generator</p>
     </header>
 
     <main class="main-content">
@@ -432,7 +432,7 @@
             class="copy-button"
             aria-label="复制密码"
           >
-            📋 复制
+            📋 Copy
           </button>
         </div>
 
@@ -447,7 +447,7 @@
           </div>
           <div class="strength-info">
             <span class="strength-label">
-              强度: <strong id="strength-label-text" style="color: #6b7280;">弱</strong>
+              Strength: <strong id="strength-label-text" style="color: #6b7280;">weak</strong>
             </span>
             <span class="strength-score" id="strength-score">0/100</span>
           </div>
@@ -455,19 +455,19 @@
 
         <!-- 安全建议 -->
         <div id="feedback" class="feedback" style="display: none;">
-          <p class="feedback-title">💡 安全建议：</p>
+          <p class="feedback-title">💡 Security Suggestions:</p>
           <ul id="feedback-list" class="feedback-list"></ul>
         </div>
       </div>
 
       <!-- 配置面板 -->
       <div class="config-panel">
-        <h2 class="config-title">⚙️ 密码配置</h2>
+        <h2 class="config-title">⚙️ Password Configuration</h2>
 
         <!-- 长度设置 -->
         <div class="config-item">
           <label class="config-label">
-            <span>密码长度: <strong id="length-value">16</strong></span>
+            <span>Password Length: <strong id="length-value">16</strong></span>
           </label>
           <input
             type="range"
@@ -485,7 +485,7 @@
 
         <!-- 字符类型选择 -->
         <div class="config-item">
-          <label class="config-label">字符类型：</label>
+          <label class="config-label">Character Type:</label>
           <div class="checkbox-group">
             <label class="checkbox-label">
               <input
@@ -493,7 +493,7 @@
                 id="include-uppercase"
                 checked
               />
-              <span>大写字母 (A-Z)</span>
+              <span>Uppercase Letters (A-Z)</span>
             </label>
             <label class="checkbox-label">
               <input
@@ -501,7 +501,7 @@
                 id="include-lowercase"
                 checked
               />
-              <span>小写字母 (a-z)</span>
+              <span>Lowercase Letters (a-z)</span>
             </label>
             <label class="checkbox-label">
               <input
@@ -509,7 +509,7 @@
                 id="include-numbers"
                 checked
               />
-              <span>数字 (0-9)</span>
+              <span>Numbers (0-9)</span>
             </label>
             <label class="checkbox-label">
               <input
@@ -517,28 +517,28 @@
                 id="include-symbols"
                 checked
               />
-              <span>特殊字符 (!@#$%...)</span>
+              <span>Special Characters (!@#$%...)</span>
             </label>
           </div>
         </div>
 
         <!-- 高级选项 -->
         <div class="config-item">
-          <label class="config-label">高级选项：</label>
+          <label class="config-label">Advanced Options:</label>
           <div class="checkbox-group">
             <label class="checkbox-label">
               <input
                 type="checkbox"
                 id="exclude-similar"
               />
-              <span>排除相似字符 (0/O, 1/l/I)</span>
+              <span>Exclude Similar Characters (0/O, 1/l/I)</span>
             </label>
             <label class="checkbox-label">
               <input
                 type="checkbox"
                 id="exclude-ambiguous"
               />
-              <span>排除歧义字符</span>
+              <span>Exclude Ambiguous Characters</span>
             </label>
           </div>
         </div>
@@ -548,14 +548,14 @@
           id="generate-button"
           class="generate-button"
         >
-          🔄 重新生成
+          🔄 Regenerate
         </button>
       </div>
     </main>
 
     <footer class="footer">
-      <p>🔒 所有密码在您的浏览器中本地生成，不会发送到任何服务器</p>
-      <p>使用 Web Crypto API 确保密码的加密安全性</p>
+      <p>🔒 All passwords are generated locally in your browser, and will not be sent to any server</p>
+      <p>Use Web Crypto API to ensure the encryption security of passwords</p>
     </footer>
   </div>
 
@@ -603,7 +603,7 @@
       }
 
       if (charSet.length === 0) {
-        throw new Error('至少需要选择一种字符类型');
+        throw new Error('At least one character type is required');
       }
 
       let password = '';
@@ -657,25 +657,25 @@
       else level = 'weak';
 
       if (password.length < 8) {
-        feedback.push('密码长度至少应为 8 个字符');
+        feedback.push('The password length should be at least 8 characters');
       }
       if (password.length < 12) {
-        feedback.push('建议使用 12 个字符以上的密码');
+        feedback.push('Suggest using passwords longer than 12 characters');
       }
       if (!/[a-z]/.test(password)) {
-        feedback.push('建议包含小写字母');
+        feedback.push('Suggest including lowercase letters');
       }
       if (!/[A-Z]/.test(password)) {
-        feedback.push('建议包含大写字母');
+        feedback.push('Suggest including uppercase letters');
       }
       if (!/[0-9]/.test(password)) {
-        feedback.push('建议包含数字');
+        feedback.push('Suggest including numbers');
       }
       if (!/[^a-zA-Z0-9]/.test(password)) {
-        feedback.push('建议包含特殊字符');
+        feedback.push('Suggest including special characters');
       }
       if (uniqueChars / password.length < 0.5) {
-        feedback.push('建议使用更多不同的字符');
+        feedback.push('Suggest using more different characters');
       }
 
       return { score, level, feedback };
@@ -683,12 +683,12 @@
 
     function getStrengthLabel(level) {
       const labels = {
-        'weak': '弱',
-        'medium': '中等',
-        'strong': '强',
-        'very-strong': '非常强'
+        'weak': 'weak',
+        'medium': 'medium',
+        'strong': 'strong',
+        'very-strong': 'very-strong'
       };
-      return labels[level] || '弱';
+      return labels[level] || 'weak';
     }
 
     function getStrengthColor(level) {
@@ -797,10 +797,10 @@
 
       const success = await copyToClipboard(password);
       if (success) {
-        copyButton.textContent = '✓ 已复制';
+        copyButton.textContent = '✓ Copied';
         copyButton.classList.add('copied');
         setTimeout(() => {
-          copyButton.textContent = '📋 复制';
+          copyButton.textContent = '📋 Copy';
           copyButton.classList.remove('copied');
         }, 2000);
       }
