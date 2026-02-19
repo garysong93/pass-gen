@@ -316,7 +316,8 @@
 }
 
 .generate-button:hover {
-  background: var(--primary-hover);
+  background: white;
+  color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
