@@ -94,7 +94,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: var(--primary-color);
+  background: #ef4444; /* 与 index-standalone.html 保持一致的红色背景 */
   border: none;
   border-radius: 0.75rem;
   cursor: pointer;
@@ -104,7 +104,8 @@
 }
 
 .copy-button:hover {
-  background: var(--primary-hover);
+  background: white;
+  color: #ef4444; /* hover 时白底红字，与 standalone 一致 */
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
